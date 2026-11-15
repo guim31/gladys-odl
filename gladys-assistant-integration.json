@@ -1,177 +1,543 @@
 {
   "manifest_version": 1,
   "type": "device",
-  "name": "Demo Devices Template",
+  "name": "BfS ODL",
   "description": {
-    "en": "Starter template showing sensors, a switch, a dimmable light and a smart plug.",
-    "fr": "Template de démarrage : capteurs, interrupteur, lampe variable et prise connectée."
+    "en": "Ambient gamma dose rate of the 1,700 ODL probes of the German BfS, every hour.",
+    "fr": "Le débit de dose gamma ambiant des 1 700 sondes ODL du BfS allemand, chaque heure.",
+    "de": "Die Gamma-Ortsdosisleistung der 1.700 ODL-Sonden des Bundesamts für Strahlenschutz, stündlich.",
+    "es": "La tasa de dosis gamma ambiental de las 1700 sondas ODL de la BfS alemana, cada hora."
   },
   "version": "1.0.0",
-  "docker_image": "ghcr.io/gladysassistant/integration-template-js:1.0.0",
-  "gladys_version": ">=5.1.0",
-  "cover_image": "https://raw.githubusercontent.com/GladysAssistant/integration-template-js/master/cover.png",
-  "categories": ["lighting", "security", "environment"],
-  "transports": ["local", "cloud"],
+  "docker_image": "ghcr.io/guim31/gladys-odl:1.0.0",
+  "gladys_version": ">=5.3.0",
+  "cover_image": "https://raw.githubusercontent.com/guim31/gladys-odl/main/cover.png",
+  "categories": ["environment"],
+  "transports": ["local"],
+  "countries": ["DE"],
+  "location": true,
   "config_schema": [
     {
       "key": "intro",
       "type": "section",
-      "label": { "en": "Getting started", "fr": "Pour commencer" },
+      "label": {
+        "en": "ODL probes",
+        "fr": "Sondes ODL",
+        "de": "ODL-Sonden",
+        "es": "Sondas ODL"
+      },
       "description": {
-        "en": "The demo weather station reads real data from the free Open-Meteo API: pick the coordinates to observe. No account, no API key.",
-        "fr": "La station météo de démonstration lit de vraies données via l'API gratuite Open-Meteo : choisissez les coordonnées à observer. Pas de compte, pas de clé d'API."
+        "en": "Reads the open data service of the Federal Office for Radiation Protection (no account). Data © BfS. Not an official alert system, and not affiliated with the BfS.",
+        "fr": "Lit le service de données ouvertes de l’Office fédéral allemand de radioprotection (sans compte). Données © BfS. Ce n’est pas un dispositif d’alerte officiel, ni une intégration du BfS.",
+        "de": "Liest die offene Datenschnittstelle des Bundesamts für Strahlenschutz (ohne Konto). Daten © BfS. Kein offizielles Warnsystem und nicht mit dem BfS verbunden.",
+        "es": "Lee el servicio de datos abiertos de la Oficina Federal alemana de Protección Radiológica (sin cuenta). Datos © BfS. No es un sistema de alerta oficial ni está afiliado a la BfS."
       },
       "links": [
         {
-          "url": "https://open-meteo.com/en/docs",
-          "label": { "en": "Open-Meteo documentation", "fr": "Documentation Open-Meteo" }
+          "url": "https://odlinfo.bfs.de",
+          "label": {
+            "en": "ODL-Info map",
+            "fr": "Carte ODL-Info",
+            "de": "ODL-Info-Karte",
+            "es": "Mapa ODL-Info"
+          }
         }
       ]
     },
     {
-      "key": "latitude",
-      "type": "number",
-      "label": { "en": "Latitude", "fr": "Latitude" },
-      "description": {
-        "en": "Latitude used for the demo weather sensor.",
-        "fr": "Latitude utilisée par le capteur météo de démonstration."
+      "key": "stations",
+      "type": "string",
+      "label": {
+        "en": "Probes",
+        "fr": "Sondes",
+        "de": "Sonden",
+        "es": "Sondas"
       },
-      "placeholder": { "en": "e.g. 48.8566", "fr": "ex. 48.8566" },
-      "required": true,
-      "default": 48.8566,
-      "min": -90,
-      "max": 90
-    },
-    {
-      "key": "longitude",
-      "type": "number",
-      "label": { "en": "Longitude", "fr": "Longitude" },
       "description": {
-        "en": "Longitude used for the demo weather sensor.",
-        "fr": "Longitude utilisée par le capteur météo de démonstration."
+        "en": "Ids, names or postcodes of the probes to follow, separated by commas, 5 at most. Empty: the probe closest to your house. The buttons below list them.",
+        "fr": "Identifiants, noms ou codes postaux des sondes à suivre, séparés par des virgules, 5 au plus. Vide : la sonde la plus proche de votre maison. Les boutons ci-dessous les listent.",
+        "de": "Kennungen, Namen oder Postleitzahlen der zu verfolgenden Sonden, durch Kommas getrennt, höchstens 5. Leer: die Sonde, die deinem Haus am nächsten ist. Die Buttons unten listen sie auf.",
+        "es": "Identificadores, nombres o códigos postales de las sondas que desea seguir, separados por comas, 5 como máximo. Vacío: la sonda más cercana a su casa. Los botones de abajo las listan."
       },
-      "placeholder": { "en": "e.g. 2.3522", "fr": "ex. 2.3522" },
-      "required": true,
-      "default": 2.3522,
-      "min": -180,
-      "max": 180
-    },
-    {
-      "key": "unit",
-      "type": "select",
-      "label": { "en": "Temperature unit", "fr": "Unité de température" },
+      "placeholder": {
+        "en": "e.g. 091620001, 80637, Feldberg",
+        "fr": "ex. 091620001, 80637, Feldberg",
+        "de": "z. B. 091620001, 80637, Feldberg",
+        "es": "p. ej. 091620001, 80637, Feldberg"
+      },
       "required": false,
-      "default": "celsius",
+      "default": ""
+    },
+    {
+      "key": "threshold",
+      "type": "select",
+      "label": {
+        "en": "Alert threshold",
+        "fr": "Seuil d’alerte",
+        "de": "Alarmschwelle",
+        "es": "Umbral de alerta"
+      },
+      "description": {
+        "en": "Dose rate that fires the \"Dose rate above the threshold\" trigger. Natural levels: 0.05 to 0.18 µSv/h, up to 0.25 on a mountain; rain can add 0.1 for a few hours.",
+        "fr": "Débit de dose qui déclenche « Débit de dose au-dessus du seuil ». Niveaux naturels : 0,05 à 0,18 µSv/h, jusqu’à 0,25 en montagne ; la pluie peut ajouter 0,1 pendant quelques heures.",
+        "de": "Dosisleistung, die den Auslöser „Dosisleistung über der Schwelle“ auslöst. Natürliche Werte: 0,05 bis 0,18 µSv/h, auf Bergen bis 0,25; Regen kann für einige Stunden 0,1 hinzufügen.",
+        "es": "Tasa de dosis que activa «Tasa de dosis por encima del umbral». Niveles naturales: de 0,05 a 0,18 µSv/h, hasta 0,25 en montaña; la lluvia puede añadir 0,1 durante unas horas."
+      },
+      "required": false,
+      "default": "0.3",
       "options": [
-        { "value": "celsius", "label": { "en": "Celsius", "fr": "Celsius" } },
-        { "value": "fahrenheit", "label": { "en": "Fahrenheit", "fr": "Fahrenheit" } }
+        {
+          "value": "0.2",
+          "label": {
+            "en": "0.2 µSv/h",
+            "fr": "0,2 µSv/h",
+            "de": "0,2 µSv/h",
+            "es": "0,2 µSv/h"
+          }
+        },
+        {
+          "value": "0.3",
+          "label": {
+            "en": "0.3 µSv/h (recommended)",
+            "fr": "0,3 µSv/h (recommandé)",
+            "de": "0,3 µSv/h (empfohlen)",
+            "es": "0,3 µSv/h (recomendado)"
+          }
+        },
+        {
+          "value": "0.5",
+          "label": {
+            "en": "0.5 µSv/h",
+            "fr": "0,5 µSv/h",
+            "de": "0,5 µSv/h",
+            "es": "0,5 µSv/h"
+          }
+        },
+        {
+          "value": "1",
+          "label": {
+            "en": "1 µSv/h",
+            "fr": "1 µSv/h",
+            "de": "1 µSv/h",
+            "es": "1 µSv/h"
+          }
+        }
       ]
     },
     {
-      "key": "poll_frequency",
-      "type": "number",
-      "label": { "en": "Refresh interval (s)", "fr": "Intervalle de rafraîchissement (s)" },
+      "key": "language",
+      "type": "select",
+      "label": {
+        "en": "Language",
+        "fr": "Langue",
+        "de": "Sprache",
+        "es": "Idioma"
+      },
       "description": {
-        "en": "How often sensors are polled, in seconds (one minute minimum).",
-        "fr": "Fréquence d'interrogation des capteurs, en secondes (une minute minimum)."
+        "en": "Language of the feature names (set when a device is added), of the state texts and of the scene texts.",
+        "fr": "Langue des noms de fonctionnalités (fixés à l’ajout d’un appareil), des textes d’état et des textes de scène.",
+        "de": "Sprache der Funktionsnamen (beim Hinzufügen eines Geräts festgelegt), der Zustandstexte und der Szenentexte.",
+        "es": "Idioma de los nombres de las funciones (fijados al añadir un dispositivo), de los textos de estado y de los textos de escena."
       },
       "required": false,
-      "default": 300,
-      "min": 60,
-      "max": 3600
+      "default": "fr",
+      "options": [
+        {
+          "value": "en",
+          "label": {
+            "en": "English",
+            "fr": "Anglais",
+            "de": "Englisch",
+            "es": "Inglés"
+          }
+        },
+        {
+          "value": "fr",
+          "label": {
+            "en": "French",
+            "fr": "Français",
+            "de": "Französisch",
+            "es": "Francés"
+          }
+        },
+        {
+          "value": "de",
+          "label": {
+            "en": "German",
+            "fr": "Allemand",
+            "de": "Deutsch",
+            "es": "Alemán"
+          }
+        },
+        {
+          "value": "es",
+          "label": {
+            "en": "Spanish",
+            "fr": "Espagnol",
+            "de": "Spanisch",
+            "es": "Español"
+          }
+        }
+      ]
     }
   ],
   "actions": [
     {
-      "key": "test_weather",
-      "label": { "en": "Test the weather provider", "fr": "Tester le fournisseur météo" },
-      "timeout_seconds": 30
-    },
-    {
-      "key": "identify",
-      "label": { "en": "Identify a device", "fr": "Identifier un appareil" },
+      "key": "find_nearby",
+      "label": {
+        "en": "Find the probes near a house",
+        "fr": "Trouver les sondes autour d’une maison",
+        "de": "Sonden um ein Haus finden",
+        "es": "Buscar las sondas alrededor de una casa"
+      },
+      "timeout_seconds": 30,
       "fields": [
         {
-          "key": "device",
+          "key": "house",
           "type": "select",
-          "source": "devices",
-          "label": { "en": "Device", "fr": "Appareil" },
-          "required": true
+          "source": "houses",
+          "label": {
+            "en": "House",
+            "fr": "Maison",
+            "de": "Haus",
+            "es": "Casa"
+          },
+          "description": {
+            "en": "Its location is set in Settings → Houses. Empty: the first located house.",
+            "fr": "Sa position se règle dans Paramètres → Maisons. Vide : la première maison située.",
+            "de": "Sein Standort wird unter Einstellungen → Häuser festgelegt. Leer: das erste Haus mit Standort.",
+            "es": "Su ubicación se define en Ajustes → Casas. Vacío: la primera casa con ubicación."
+          },
+          "required": false
+        }
+      ]
+    },
+    {
+      "key": "search",
+      "label": {
+        "en": "Search for probes",
+        "fr": "Chercher des sondes",
+        "de": "Sonden suchen",
+        "es": "Buscar sondas"
+      },
+      "timeout_seconds": 30,
+      "fields": [
+        {
+          "key": "query",
+          "type": "string",
+          "label": {
+            "en": "Postcode or name",
+            "fr": "Code postal ou nom",
+            "de": "Postleitzahl oder Name",
+            "es": "Código postal o nombre"
+          },
+          "description": {
+            "en": "A postcode (or its first digits) or a part of the probe name.",
+            "fr": "Un code postal (ou ses premiers chiffres) ou une partie du nom de la sonde.",
+            "de": "Eine Postleitzahl (oder ihre ersten Ziffern) oder ein Teil des Sondennamens.",
+            "es": "Un código postal (o sus primeras cifras) o una parte del nombre de la sonda."
+          },
+          "placeholder": {
+            "en": "e.g. 80637, München",
+            "fr": "ex. 80637, München",
+            "de": "z. B. 80637, München",
+            "es": "p. ej. 80637, München"
+          },
+          "required": false
         }
       ]
     }
   ],
   "scene_triggers": [
     {
-      "key": "motion_detected",
-      "label": { "en": "Motion detected", "fr": "Mouvement détecté" },
+      "key": "dose_above_threshold",
+      "label": {
+        "en": "Dose rate above the threshold",
+        "fr": "Débit de dose au-dessus du seuil",
+        "de": "Dosisleistung über der Schwelle",
+        "es": "Tasa de dosis por encima del umbral"
+      },
       "description": {
-        "en": "A demo motion sensor saw a person or an animal move.",
-        "fr": "Un détecteur de démonstration a vu bouger une personne ou un animal."
+        "en": "The hourly dose rate of a probe in operation reaches the alert threshold of the configuration, checked or not yet. Fired once when it is crossed.",
+        "fr": "Le débit horaire d’une sonde en service atteint le seuil d’alerte de la configuration, contrôlé ou pas encore. Déclenché une fois, au franchissement.",
+        "de": "Die stündliche Dosisleistung einer Sonde in Betrieb erreicht die Alarmschwelle der Konfiguration, geprüft oder noch nicht. Einmal ausgelöst, beim Überschreiten.",
+        "es": "La tasa horaria de una sonda en servicio alcanza el umbral de alerta de la configuración, comprobada o aún no. Se activa una vez, al superarlo."
       },
       "fields": [
         {
           "key": "device",
           "type": "select",
           "source": "devices",
-          "label": { "en": "Sensor", "fr": "Détecteur" }
-        },
-        {
-          "key": "target",
-          "type": "multi_select",
-          "label": { "en": "What moved", "fr": "Ce qui a bougé" },
-          "options": [
-            { "value": "person", "label": { "en": "Person", "fr": "Personne" } },
-            { "value": "animal", "label": { "en": "Animal", "fr": "Animal" } }
-          ]
+          "label": {
+            "en": "Probe",
+            "fr": "Sonde",
+            "de": "Sonde",
+            "es": "Sonda"
+          },
+          "description": {
+            "en": "Empty: any probe.",
+            "fr": "Vide : n’importe quelle sonde.",
+            "de": "Leer: jede Sonde.",
+            "es": "Vacío: cualquier sonda."
+          },
+          "required": false
         }
       ],
       "variables": [
         {
-          "key": "target",
+          "key": "station_name",
           "type": "string",
-          "label": { "en": "What moved", "fr": "Ce qui a bougé" }
+          "label": {
+            "en": "Probe name",
+            "fr": "Nom de la sonde",
+            "de": "Name der Sonde",
+            "es": "Nombre de la sonda"
+          }
+        },
+        {
+          "key": "dose_rate",
+          "type": "number",
+          "label": {
+            "en": "Dose rate (µSv/h)",
+            "fr": "Débit de dose (µSv/h)",
+            "de": "Ortsdosisleistung (µSv/h)",
+            "es": "Tasa de dosis (µSv/h)"
+          }
+        },
+        {
+          "key": "threshold",
+          "type": "number",
+          "label": {
+            "en": "Threshold (µSv/h)",
+            "fr": "Seuil (µSv/h)",
+            "de": "Schwelle (µSv/h)",
+            "es": "Umbral (µSv/h)"
+          }
+        },
+        {
+          "key": "measured_at",
+          "type": "string",
+          "label": {
+            "en": "End of the measurement hour (UTC)",
+            "fr": "Fin de l’heure de mesure (UTC)",
+            "de": "Ende der Messstunde (UTC)",
+            "es": "Fin de la hora de medición (UTC)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "dose_back_to_normal",
+      "label": {
+        "en": "Dose rate back to normal",
+        "fr": "Débit de dose revenu à la normale",
+        "de": "Dosisleistung wieder normal",
+        "es": "Tasa de dosis de nuevo normal"
+      },
+      "description": {
+        "en": "After a \"Dose rate above the threshold\", the dose rate is more than 0.02 µSv/h below the threshold again.",
+        "fr": "Après un « Débit de dose au-dessus du seuil », le débit est de nouveau à plus de 0,02 µSv/h sous le seuil.",
+        "de": "Nach einer „Dosisleistung über der Schwelle“ liegt die Dosisleistung wieder mehr als 0,02 µSv/h unter der Schwelle.",
+        "es": "Tras una «Tasa de dosis por encima del umbral», la tasa vuelve a estar más de 0,02 µSv/h por debajo del umbral."
+      },
+      "fields": [
+        {
+          "key": "device",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Probe",
+            "fr": "Sonde",
+            "de": "Sonde",
+            "es": "Sonda"
+          },
+          "description": {
+            "en": "Empty: any probe.",
+            "fr": "Vide : n’importe quelle sonde.",
+            "de": "Leer: jede Sonde.",
+            "es": "Vacío: cualquier sonda."
+          },
+          "required": false
+        }
+      ],
+      "variables": [
+        {
+          "key": "station_name",
+          "type": "string",
+          "label": {
+            "en": "Probe name",
+            "fr": "Nom de la sonde",
+            "de": "Name der Sonde",
+            "es": "Nombre de la sonda"
+          }
+        },
+        {
+          "key": "dose_rate",
+          "type": "number",
+          "label": {
+            "en": "Dose rate (µSv/h)",
+            "fr": "Débit de dose (µSv/h)",
+            "de": "Ortsdosisleistung (µSv/h)",
+            "es": "Tasa de dosis (µSv/h)"
+          }
         }
       ]
     }
   ],
   "scene_actions": [
     {
-      "key": "identify_device",
-      "label": { "en": "Identify a device", "fr": "Identifier un appareil" },
-      "description": {
-        "en": "Make a device signal itself (the demo light blinks).",
-        "fr": "Fait se signaler un appareil (la lampe de démonstration clignote)."
+      "key": "get_dose_rate",
+      "label": {
+        "en": "Get the dose rate of a probe",
+        "fr": "Obtenir le débit de dose d’une sonde",
+        "de": "Dosisleistung einer Sonde abrufen",
+        "es": "Obtener la tasa de dosis de una sonda"
       },
-      "timeout_seconds": 15,
+      "description": {
+        "en": "Its last hourly measurement, with a sentence ready for a notification.",
+        "fr": "Sa dernière mesure horaire, avec une phrase prête pour une notification.",
+        "de": "Die letzte Stundenmessung der Sonde, mit einem fertigen Satz für eine Benachrichtigung.",
+        "es": "Su última medición horaria, con una frase lista para una notificación."
+      },
+      "timeout_seconds": 10,
       "fields": [
         {
-          "key": "device",
+          "key": "station",
           "type": "select",
           "source": "devices",
-          "label": { "en": "Device", "fr": "Appareil" },
+          "label": {
+            "en": "Probe",
+            "fr": "Sonde",
+            "de": "Sonde",
+            "es": "Sonda"
+          },
           "required": true
         }
       ],
       "outputs": [
         {
-          "key": "signalled",
-          "type": "boolean",
-          "label": { "en": "Device signalled", "fr": "Appareil signalé" }
+          "key": "summary",
+          "type": "string",
+          "label": {
+            "en": "Summary",
+            "fr": "Résumé",
+            "de": "Zusammenfassung",
+            "es": "Resumen"
+          }
+        },
+        {
+          "key": "dose_rate",
+          "type": "number",
+          "label": {
+            "en": "Dose rate (µSv/h)",
+            "fr": "Débit de dose (µSv/h)",
+            "de": "Ortsdosisleistung (µSv/h)",
+            "es": "Tasa de dosis (µSv/h)"
+          }
+        },
+        {
+          "key": "cosmic",
+          "type": "number",
+          "label": {
+            "en": "Cosmic part (µSv/h)",
+            "fr": "Part cosmique (µSv/h)",
+            "de": "Kosmischer Anteil (µSv/h)",
+            "es": "Parte cósmica (µSv/h)"
+          }
+        },
+        {
+          "key": "terrestrial",
+          "type": "number",
+          "label": {
+            "en": "Terrestrial part (µSv/h)",
+            "fr": "Part terrestre (µSv/h)",
+            "de": "Terrestrischer Anteil (µSv/h)",
+            "es": "Parte terrestre (µSv/h)"
+          }
+        },
+        {
+          "key": "measured_at",
+          "type": "string",
+          "label": {
+            "en": "End of the measurement hour (UTC)",
+            "fr": "Fin de l’heure de mesure (UTC)",
+            "de": "Ende der Messstunde (UTC)",
+            "es": "Fin de la hora de medición (UTC)"
+          }
+        },
+        {
+          "key": "status",
+          "type": "string",
+          "label": {
+            "en": "State code (checked, defective…)",
+            "fr": "Code d’état (checked, defective…)",
+            "de": "Zustandscode (checked, defective…)",
+            "es": "Código de estado (checked, defective…)"
+          }
         }
       ]
     }
   ],
   "widgets": [
     {
-      "key": "demo_status",
-      "label": { "en": "Demo status", "fr": "État de la démo" },
+      "key": "probe_dose",
+      "label": {
+        "en": "ODL dose rate",
+        "fr": "Débit de dose ODL",
+        "de": "ODL-Ortsdosisleistung",
+        "es": "Tasa de dosis ODL"
+      },
       "description": {
-        "en": "Live temperature and plug power, plug connection and observed location.",
-        "fr": "Température et puissance en direct, connexion de la prise, position observée."
+        "en": "The dose rate of a probe, its cosmic and terrestrial parts and its 24 h curve.",
+        "fr": "Le débit de dose d’une sonde, ses parts cosmique et terrestre et sa courbe sur 24 h.",
+        "de": "Die Dosisleistung einer Sonde, ihr kosmischer und terrestrischer Anteil und ihre 24-h-Kurve.",
+        "es": "La tasa de dosis de una sonda, sus partes cósmica y terrestre y su curva de 24 h."
       },
       "icon": "activity",
-      "action_timeout_seconds": 15
+      "settings": [
+        {
+          "key": "station",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Probe",
+            "fr": "Sonde",
+            "de": "Sonde",
+            "es": "Sonda"
+          },
+          "description": {
+            "en": "Empty: the first probe added.",
+            "fr": "Vide : la première sonde ajoutée.",
+            "de": "Leer: die erste hinzugefügte Sonde.",
+            "es": "Vacío: la primera sonda añadida."
+          },
+          "required": false
+        },
+        {
+          "key": "show_chart",
+          "type": "boolean",
+          "label": {
+            "en": "Show the 24 h curve",
+            "fr": "Afficher la courbe 24 h",
+            "de": "24-h-Kurve anzeigen",
+            "es": "Mostrar la curva de 24 h"
+          },
+          "required": false,
+          "default": true
+        },
+        {
+          "key": "show_status",
+          "type": "boolean",
+          "label": {
+            "en": "Show the time, state and threshold",
+            "fr": "Afficher l’heure, l’état et le seuil",
+            "de": "Zeit, Zustand und Schwelle anzeigen",
+            "es": "Mostrar la hora, el estado y el umbral"
+          },
+          "required": false,
+          "default": true
+        }
+      ]
     }
   ]
 }

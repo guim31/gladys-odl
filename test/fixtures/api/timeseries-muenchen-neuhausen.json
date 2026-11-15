@@ -1,0 +1,442 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_119a",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-14T10:00:00Z",
+        "end_measure": "2026-11-14T11:00:00Z",
+        "value": 0.101,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_119b",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-14T11:00:00Z",
+        "end_measure": "2026-11-14T12:00:00Z",
+        "value": 0.101,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_119c",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-14T12:00:00Z",
+        "end_measure": "2026-11-14T13:00:00Z",
+        "value": 0.102,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_119d",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-14T13:00:00Z",
+        "end_measure": "2026-11-14T14:00:00Z",
+        "value": 0.097,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_119e",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-14T14:00:00Z",
+        "end_measure": "2026-11-14T15:00:00Z",
+        "value": 0.103,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_119f",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-14T15:00:00Z",
+        "end_measure": "2026-11-14T16:00:00Z",
+        "value": 0.103,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_11a0",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-14T16:00:00Z",
+        "end_measure": "2026-11-14T17:00:00Z",
+        "value": 0.101,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_11a1",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-14T17:00:00Z",
+        "end_measure": "2026-11-14T18:00:00Z",
+        "value": 0.1,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_11a2",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-14T18:00:00Z",
+        "end_measure": "2026-11-14T19:00:00Z",
+        "value": 0.102,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_11a3",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-14T19:00:00Z",
+        "end_measure": "2026-11-14T20:00:00Z",
+        "value": 0.1,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_11a4",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-14T20:00:00Z",
+        "end_measure": "2026-11-14T21:00:00Z",
+        "value": 0.1,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_11a5",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-14T21:00:00Z",
+        "end_measure": "2026-11-14T22:00:00Z",
+        "value": 0.105,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_11a6",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-14T22:00:00Z",
+        "end_measure": "2026-11-14T23:00:00Z",
+        "value": 0.103,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_11a7",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-14T23:00:00Z",
+        "end_measure": "2026-11-15T00:00:00Z",
+        "value": 0.105,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_11a8",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-15T00:00:00Z",
+        "end_measure": "2026-11-15T01:00:00Z",
+        "value": 0.105,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_11a9",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-15T01:00:00Z",
+        "end_measure": "2026-11-15T02:00:00Z",
+        "value": 0.108,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_11aa",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-15T02:00:00Z",
+        "end_measure": "2026-11-15T03:00:00Z",
+        "value": 0.106,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_11ab",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-15T03:00:00Z",
+        "end_measure": "2026-11-15T04:00:00Z",
+        "value": 0.105,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_11ac",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-15T04:00:00Z",
+        "end_measure": "2026-11-15T05:00:00Z",
+        "value": 0.107,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_11ad",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-15T05:00:00Z",
+        "end_measure": "2026-11-15T06:00:00Z",
+        "value": 0.111,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_11ae",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-15T06:00:00Z",
+        "end_measure": "2026-11-15T07:00:00Z",
+        "value": 0.11,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_11af",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-15T07:00:00Z",
+        "end_measure": "2026-11-15T08:00:00Z",
+        "value": 0.108,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_11b0",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-15T08:00:00Z",
+        "end_measure": "2026-11-15T09:00:00Z",
+        "value": 0.107,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_timeseries_odl_1h.fid-390dae3a_1a1def500f3_11b1",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "name": "München-Neuhausen",
+        "start_measure": "2026-11-15T09:00:00Z",
+        "end_measure": "2026-11-15T10:00:00Z",
+        "value": 0.107,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    }
+  ],
+  "totalFeatures": 24,
+  "numberMatched": 24,
+  "numberReturned": 24,
+  "timeStamp": "2026-11-15T11:26:32.798Z",
+  "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::4326" } }
+}

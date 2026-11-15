@@ -1,8 +1,8 @@
 {
-  "name": "gladys-integration-template-js",
+  "name": "gladys-odl",
   "version": "1.0.0",
   "private": true,
-  "description": "Official starter template to build an external integration for Gladys Assistant with the JavaScript SDK.",
+  "description": "Gladys Assistant integration for the ambient gamma dose rate of the ODL network of the German BfS.",
   "type": "module",
   "main": "index.js",
   "scripts": {
