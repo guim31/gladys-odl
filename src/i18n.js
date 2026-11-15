@@ -84,7 +84,7 @@ export const TEXT = {
     en: 'The BfS does not answer: the measurements are read again in 20 minutes.',
     fr: 'Le BfS ne répond pas : les mesures seront relues dans 20 minutes.',
     de: 'Das BfS antwortet nicht: Die Messwerte werden in 20 Minuten erneut gelesen.',
-    es: 'El BfS no responde: las mediciones se volverán a leer dentro de 20 minutos.',
+    es: 'La BfS no responde: las mediciones se volverán a leer dentro de 20 minutos.',
   },
   initFailed: {
     en: 'Initialization failed, check the integration logs.',

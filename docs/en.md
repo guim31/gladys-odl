@@ -62,7 +62,7 @@ first one added), and two switches to hide the curve or the rows below it.
   of the configuration, checked or not yet (a fast alert rather than a late one). Fired once when it is crossed; it
   stays crossed until the dose rate falls 0.02 µSv/h below it. Never on the first look at a probe, nor for a probe in
   test operation. Variables: probe name, dose rate, threshold, end of the measurement hour.
-- Trigger **Dose rate back to normal**: after an exceedance, the dose rate is more than 0.02 µSv/h below the threshold
+- Trigger **Dose rate back to normal**: after an exceedance, the dose rate is at least 0.02 µSv/h below the threshold
   again.
 - Action **Get the dose rate of a probe**: the last values and a ready-made sentence (`summary`) for a notification;
   `status` is one of `checked`, `not_checked`, `test_operation`, `defective`, `no_recent`.

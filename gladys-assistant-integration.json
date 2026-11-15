@@ -335,10 +335,10 @@
         "es": "Tasa de dosis de nuevo normal"
       },
       "description": {
-        "en": "After a \"Dose rate above the threshold\", the dose rate is more than 0.02 µSv/h below the threshold again.",
-        "fr": "Après un « Débit de dose au-dessus du seuil », le débit est de nouveau à plus de 0,02 µSv/h sous le seuil.",
-        "de": "Nach einer „Dosisleistung über der Schwelle“ liegt die Dosisleistung wieder mehr als 0,02 µSv/h unter der Schwelle.",
-        "es": "Tras una «Tasa de dosis por encima del umbral», la tasa vuelve a estar más de 0,02 µSv/h por debajo del umbral."
+        "en": "After a \"Dose rate above the threshold\", the dose rate is at least 0.02 µSv/h below the threshold again.",
+        "fr": "Après un « Débit de dose au-dessus du seuil », le débit est de nouveau à au moins 0,02 µSv/h sous le seuil.",
+        "de": "Nach einer „Dosisleistung über der Schwelle“ liegt die Dosisleistung wieder mindestens 0,02 µSv/h unter der Schwelle.",
+        "es": "Tras una «Tasa de dosis por encima del umbral», la tasa vuelve a estar al menos 0,02 µSv/h por debajo del umbral."
       },
       "fields": [
         {

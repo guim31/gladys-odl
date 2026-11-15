@@ -65,7 +65,7 @@ umbral de alerta), la curva de las últimas 24 horas, y la hora, el estado, el u
   superarlo; el umbral sigue superado hasta que la tasa baja 0,02 µSv/h por debajo. Nunca en la primera lectura de
   una sonda, ni para una sonda en pruebas. Variables: nombre de la sonda, tasa de dosis, umbral, fin de la hora de
   medición.
-- Disparador **Tasa de dosis de nuevo normal**: tras una superación, la tasa vuelve a estar más de 0,02 µSv/h por
+- Disparador **Tasa de dosis de nuevo normal**: tras una superación, la tasa vuelve a estar al menos 0,02 µSv/h por
   debajo del umbral.
 - Acción **Obtener la tasa de dosis de una sonda**: los últimos valores y una frase lista (`summary`) para una
   notificación; `status` vale `checked`, `not_checked`, `test_operation`, `defective` o `no_recent`.
@@ -88,7 +88,7 @@ un umbral propio.
 - **«Ninguna sonda»**: indique la ubicación de una casa (Ajustes → Casas) o escriba una sonda en la configuración.
 - **«Sondas desconocidas»**: no se encontró el identificador, el nombre o el código postal; use los botones de
   búsqueda y copie el identificador.
-- **«El BfS no responde»**: las mediciones se vuelven a leer cada 20 minutos.
+- **«La BfS no responde»**: las mediciones se vuelven a leer cada 20 minutos.
 - **«Sin medición reciente»**: la sonda no ha publicado nada desde hace 4 horas (mantenimiento, transmisión). Los
   valores vuelven con su siguiente medición.
 - **«Sonda fuera de servicio»**: la BfS marca la sonda como averiada; elija una vecina hasta que la reparen.

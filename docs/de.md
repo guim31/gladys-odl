@@ -68,7 +68,7 @@ auszublenden.
   ausgelöst, beim Überschreiten; die Schwelle bleibt überschritten, bis die Dosisleistung 0,02 µSv/h darunter fällt.
   Nie beim ersten Blick auf eine Sonde und nie für eine Sonde im Testbetrieb. Variablen: Name der Sonde,
   Dosisleistung, Schwelle, Ende der Messstunde.
-- Auslöser **Dosisleistung wieder normal**: Nach einer Überschreitung liegt die Dosisleistung wieder mehr als
+- Auslöser **Dosisleistung wieder normal**: Nach einer Überschreitung liegt die Dosisleistung wieder mindestens
   0,02 µSv/h unter der Schwelle.
 - Aktion **Dosisleistung einer Sonde abrufen**: die letzten Werte und ein fertiger Satz (`summary`) für eine
   Benachrichtigung; `status` ist `checked`, `not_checked`, `test_operation`, `defective` oder `no_recent`.

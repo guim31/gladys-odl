@@ -66,7 +66,7 @@ la première ajoutée), et deux interrupteurs pour masquer la courbe ou les lign
   Déclenché une fois, au franchissement ; le seuil reste franchi tant que le débit ne repasse pas 0,02 µSv/h en
   dessous. Jamais au premier regard sur une sonde, ni pour une sonde en test. Variables : nom de la sonde, débit,
   seuil, fin de l’heure de mesure.
-- Déclencheur **Débit de dose revenu à la normale** : après un dépassement, le débit est de nouveau à plus de
+- Déclencheur **Débit de dose revenu à la normale** : après un dépassement, le débit est de nouveau à au moins
   0,02 µSv/h sous le seuil.
 - Action **Obtenir le débit de dose d’une sonde** : les dernières valeurs et une phrase toute faite (`summary`) pour
   une notification ; `status` vaut `checked`, `not_checked`, `test_operation`, `defective` ou `no_recent`.
