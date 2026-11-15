@@ -10,6 +10,8 @@ the notes of the version's GitHub Release.
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-11-15
+
 ### Added
 
 - One device per probe of the ODL network of the German BfS: ambient gamma dose
@@ -27,3 +29,6 @@ the notes of the version's GitHub Release.
 - Dashboard widget "ODL dose rate": tiles, 24-hour curve, time, state and
   threshold.
 - Feature names and texts in English, French, German and Spanish.
+
+[Unreleased]: https://github.com/guim31/gladys-odl/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/guim31/gladys-odl/releases/tag/v1.0.0
