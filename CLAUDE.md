@@ -31,16 +31,23 @@ pushing.
 ## Architecture
 
 ```
-index.js                          SDK wiring only: handlers registered before connect()
-src/devices/index.js              registry of the device blueprints + dispatch helpers
-src/devices/<type>.js             one device type per file (buildDevice, onPoll, onSetValue...)
-src/scenes.js                     scene action handlers (manifest `scene_actions`)
-src/widgets.js                    dashboard widget handlers (manifest `widgets`)
+index.js                          SDK wiring only (src/app.js registers the handlers)
+src/app.js                        handlers: connection, discovery, device created, actions, scene action, widget
+src/hub.js                        probe list, followed probes, 24 h of measurements, states, scene events
+src/dose.js                       pure rules: probe state, freshness, threshold with hysteresis, merge
+src/api.js                        client of the BfS WFS (probe list, newest values, history), distances
+src/poller.js                     the container's 20-minute timer (devices are published should_poll: false)
+src/devices.js                    the probe device: features (keys are forever)
+src/actions.js                    "Find the probes near a house", "Search for probes" (manifest `actions`)
+src/scenes.js                     scene action handler (manifest `scene_actions`)
+src/widgets.js                    dashboard widget handler (manifest `widgets`)
+src/i18n.js                       every text, en/fr/de/es
 src/config.js                     DEFAULT_CONFIG (mirrors the manifest defaults) + normalization
-src/weather.js                    example driver (Open-Meteo)
+src/store.js, src/issues.js       /data persistence (atomic writes), repeated failures logged once
 gladys-assistant-integration.json manifest: name, config_schema, actions, image...
-docs/en.md, docs/fr.md            user documentation, re-hosted by Gladys (mandatory)
+docs/en.md, fr.md, de.md, es.md   user documentation, re-hosted by Gladys (mandatory)
 test/                             node --test, against the SDK's fake Gladys (integration-sdk/testing)
+test/fixtures/api/                real answers of the BfS WFS (15/11/2026)
 .github/scripts/release.mjs       release helpers (manifest bump, changelog), tested in test/
 ```
 
@@ -251,3 +258,24 @@ long, et sur un « Sie »/« Ihr… » de politesse en allemand. Le store exige 
 - Docs `en`, `fr`, `de`, `es` avec les mêmes sections.
 - Chauffe, ouverture, sécurité : ne rien rendre pilotable « comme un thermostat » ou par un assistant
   vocal quand une erreur serait dangereuse (leçon d'OctoPrint).
+
+## BfS ODL (propre à cette intégration)
+
+Relevé sur le WFS ouvert le 15/11/2026 (captures dans `test/fixtures/api/`). Voisin : `gladys-teleray` (même
+structure).
+
+- WFS GeoServer `https://www.imis.bfs.de/ogc/opendata/ows`, sans clé, `outputFormat=application/json`, filtres
+  `CQL_FILTER` (`kenn IN ('…','…')`, `kenn='…' AND end_measure > '…'`). **Une erreur (filtre faux, couche inconnue)
+  revient en XML avec HTTP 200** : « pas du JSON » est une erreur.
+- `odlinfo_odl_1h_latest` : 1 672 sondes, 890 ko complet, 470 ko avec `propertyName=…`
+  (sept propriétés, lecture quotidienne de la liste). `kenn` (9 chiffres) est l'identifiant stable ;
+  `site_status` 1 en service, 2 défectueuse (champs de mesure à `null`), 3 essai (souvent sans valeur) ;
+  `validated` 1 contrôlée, 2 pas encore (doc BfS : « 1 = geprüft, 2 = ungeprüft ») ; `value_cosmic` +
+  `value_terrestrial` ≈ `value`. Une valeur par heure, publiée 60 à 90 min après `end_measure`.
+- `odlinfo_timeseries_odl_1h` : ~7 jours par sonde, sans parts cosmique/terrestre ni statut. Lu seulement pour combler
+  un trou (premier regard, redémarrage) ; sinon la valeur de `latest` suffit (une requête pour toutes les sondes).
+- Pas d'unité µSv/h dans Gladys : `unknown/unknown`, unité dans le nom (trois sur l'appareil). Seuils comparés en
+  nSv/h entiers : `0.3 - 0.02` vaut `0.27999999999999997` en flottant.
+- Un code postal peut porter plusieurs sondes (82467 : Garmisch, Zugspitze, Zugspitzgipfel) : la plus basse en service.
+- Conditions : données gratuites, source citée (« Bundesamt für Strahlenschutz ») ; logo BfS sur Wikimedia Commons
+  en domaine public.

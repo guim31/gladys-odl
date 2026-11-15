@@ -1,0 +1,110 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-390dae3a_1a1def500f3_1196",
+      "geometry": { "type": "Point", "coordinates": [10.3, 53.21] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3051",
+        "kenn": "033550351",
+        "plz": "21391",
+        "name": "Reppenstedt OT Südergellersen",
+        "site_status": 2,
+        "site_status_text": "defekt",
+        "kid": 5,
+        "height_above_sea": 60,
+        "start_measure": null,
+        "end_measure": null,
+        "value": null,
+        "value_cosmic": null,
+        "value_terrestrial": null,
+        "unit": "µSv/h",
+        "validated": null,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-390dae3a_1a1def500f3_1197",
+      "geometry": { "type": "Point", "coordinates": [7.06, 49.93] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3100",
+        "kenn": "072310081",
+        "plz": "54470",
+        "name": "Bernkastel-Kues",
+        "site_status": 3,
+        "site_status_text": "Testbetrieb",
+        "kid": 4,
+        "height_above_sea": 125,
+        "start_measure": null,
+        "end_measure": null,
+        "value": null,
+        "value_cosmic": null,
+        "value_terrestrial": null,
+        "unit": "µSv/h",
+        "validated": null,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-390dae3a_1a1def500f3_1198",
+      "geometry": { "type": "Point", "coordinates": [8, 47.87] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3359",
+        "kenn": "083150371",
+        "plz": "79868",
+        "name": "Feldberg",
+        "site_status": 1,
+        "site_status_text": "in Betrieb",
+        "kid": 1,
+        "height_above_sea": 1490,
+        "start_measure": "2026-11-15T09:00:00Z",
+        "end_measure": "2026-11-15T10:00:00Z",
+        "value": 0.181,
+        "value_cosmic": 0.066,
+        "value_terrestrial": 0.115,
+        "unit": "µSv/h",
+        "validated": 2,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-390dae3a_1a1def500f3_1199",
+      "geometry": { "type": "Point", "coordinates": [11.54, 48.16] },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "plz": "80637",
+        "name": "München-Neuhausen",
+        "site_status": 1,
+        "site_status_text": "in Betrieb",
+        "kid": 3,
+        "height_above_sea": 515,
+        "start_measure": "2026-11-15T09:00:00Z",
+        "end_measure": "2026-11-15T10:00:00Z",
+        "value": 0.107,
+        "value_cosmic": 0.049,
+        "value_terrestrial": 0.057,
+        "unit": "µSv/h",
+        "validated": 1,
+        "nuclide": "Gamma-ODL-Brutto",
+        "duration": "1h"
+      }
+    }
+  ],
+  "totalFeatures": 4,
+  "numberMatched": 4,
+  "numberReturned": 4,
+  "timeStamp": "2026-11-15T11:26:32.601Z",
+  "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::4326" } }
+}

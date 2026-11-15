@@ -1,41 +1,58 @@
 // -----------------------------------------------------------------------------
-// Scene actions (SDK v0.14+, Gladys 5.1+).
+// Scene action "Get the dose rate of a probe" (Gladys 5.1+).
 //
-// A scene action is an OPERATION a scene author places in a scene, with
-// parameters and a result: "identify this device", "take a snapshot", "clean
-// these rooms". Each one is declared in the manifest `scene_actions` field
-// (key, label, `fields` in the config_schema grammar, scalar `outputs`) and
-// handled here, keyed by that same `key`; index.js registers every entry with
-// `gladys.onSceneAction(key, ...)`.
+// Gives a scene the last measurement of a probe as outputs a notification can
+// quote: "{{...summary}}" reads "München-Neuhausen (ODL): 0,107 µSv/h
+// (15/11 11:00), cosmique 0,049, terrestre 0,057. Mesure contrôlée.". The
+// devices already give each value to the scene conditions; what this action
+// adds is a ready-made sentence in the configured language.
 //
-// Scene TRIGGERS are the other direction ("this happened"): they are fired by
-// the device that observes the event, see src/devices/motionSensor.js.
-//
-// The rules that matter:
-//   - `fields` arrive RESOLVED: scene variables substituted, defaults applied,
-//     validated by the core; a `"source": "devices"` field is the chosen
-//     device external_id;
-//   - resolve an object of the declared `outputs` (scalars only), readable by
-//     the following actions of the scene, or `undefined` for none. Keys not
-//     declared in the manifest are dropped by the core;
-//   - throwing fails THIS action only: the scene logs it and continues. A
-//     scene action is never a condition: return an output and let the scene
-//     author gate on it;
-//   - never fire a scene event as a consequence of a received action: a scene
-//     bound to that event would loop through the integration.
+// The triggers are fired by the hub (src/hub.js).
 // -----------------------------------------------------------------------------
 
-import { createLogger } from '@gladysassistant/integration-sdk';
-import { signalDevice } from './devices/index.js';
+import { MESSAGES, TEXT } from './i18n.js';
+import { isFresh, latest, stationStatus } from './dose.js';
 
-const logger = createLogger({ name: 'scenes' });
+export const GET_DOSE_RATE = 'get_dose_rate';
 
-export const SCENE_ACTIONS = {
-  // The ack is awaited under the action's `timeout_seconds` (15 s in the
-  // manifest), counted from the moment the scene reaches the action.
-  async identify_device(gladys, { fields, config }) {
-    logger.info(`Scene action identify_device <- ${fields.device}`);
-    const signalled = await signalDevice(gladys, fields.device, config);
-    return { signalled };
-  },
-};
+/**
+ * @param {import('./hub.js').Hub} hub
+ * @param {{ station?: string }} fields
+ * @param {string} language
+ */
+export function getDoseRate(hub, fields, language) {
+  const station = fields.station ? hub.stationByDevice(fields.station) : null;
+  if (!station) {
+    throw new Error(MESSAGES.thrown(TEXT.unknownStation));
+  }
+  const record = hub.records.get(station.id);
+  const last = latest(record);
+  if (!last) {
+    throw new Error(MESSAGES.thrown(TEXT.noReading));
+  }
+  const now = hub.now();
+  const fresh = isFresh(record, now);
+  const values = {
+    dose: fresh ? last.v : null,
+    cosmic: fresh ? record.cosmic : null,
+    terrestrial: fresh ? record.terrestrial : null,
+  };
+  const status = stationStatus(record, now);
+  const outputs = {
+    summary: MESSAGES.summary({ name: hub.nameOf(station), ...values, time: last.t, status })[
+      language
+    ],
+    measured_at: new Date(last.t).toISOString(),
+    status,
+  };
+  for (const [key, value] of [
+    ['dose_rate', values.dose],
+    ['cosmic', values.cosmic],
+    ['terrestrial', values.terrestrial],
+  ]) {
+    if (value !== null) {
+      outputs[key] = value;
+    }
+  }
+  return outputs;
+}

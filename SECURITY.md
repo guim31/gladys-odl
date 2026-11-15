@@ -30,6 +30,18 @@ Gladys before reporting a problem.
 
 In scope: the code of this repository and the Docker image it publishes.
 
+What the integration handles:
+
+- **Network**: outgoing HTTPS requests to the open data service of the BfS
+  (`www.imis.bfs.de`) only. It opens no port and needs no account, token or
+  key.
+- **`/data`**: `odl.json`, the public list of the ODL probes (names, ids,
+  postcodes, positions) and the last 24 hours of measurements of the followed
+  probes. No secret.
+- **Gladys**: the integration reads the location of the houses to pick the
+  closest probe. The coordinates never leave the container (the distance is
+  computed locally) and are neither stored nor logged.
+
 Out of scope: Gladys Assistant itself (see its
 [security policy](https://github.com/GladysAssistant/Gladys/security/policy)),
-and the third-party services and devices the integration talks to.
+and the BfS service.

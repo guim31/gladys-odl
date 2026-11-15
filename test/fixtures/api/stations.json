@@ -1,0 +1,525 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.28, 52.97]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3339",
+        "kenn": "033610122",
+        "plz": "27283",
+        "name": "Verden-Scharnhorst",
+        "site_status": 1,
+        "height_above_sea": 44
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.99, 47.42]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3323",
+        "kenn": "091801173",
+        "plz": "82467",
+        "name": "Garmisch-P. Zugspitzgipfel",
+        "site_status": 1,
+        "height_above_sea": 2966
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.3, 53.21]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3051",
+        "kenn": "033550351",
+        "plz": "21391",
+        "name": "Reppenstedt OT Südergellersen",
+        "site_status": 2,
+        "height_above_sea": 60
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.06, 49.93]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3100",
+        "kenn": "072310081",
+        "plz": "54470",
+        "name": "Bernkastel-Kues",
+        "site_status": 3,
+        "height_above_sea": 125
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.66, 48.09]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ1361",
+        "kenn": "091620003",
+        "plz": "81739",
+        "name": "München-Neuperlach",
+        "site_status": 1,
+        "height_above_sea": 541
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [14, 53.39]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ2431",
+        "kenn": "120735201",
+        "plz": "17291",
+        "name": "Klockow",
+        "site_status": 1,
+        "height_above_sea": 50
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.43, 48.95]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3365",
+        "kenn": "091761202",
+        "plz": "85095",
+        "name": "Denkendorf OT Gelbelsee",
+        "site_status": 1,
+        "height_above_sea": 540
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.39, 48.36]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ1384",
+        "kenn": "091741311",
+        "plz": "85229",
+        "name": "Markt Indersdorf",
+        "site_status": 1,
+        "height_above_sea": 488
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.06, 47.48]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ1409",
+        "kenn": "091801171",
+        "plz": "82467",
+        "name": "Garmisch-Partenkirchen",
+        "site_status": 1,
+        "height_above_sea": 720
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.5, 48.49]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ2967",
+        "kenn": "091861301",
+        "plz": "85304",
+        "name": "Ilmmünster",
+        "site_status": 1,
+        "height_above_sea": 439
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.87, 53.31]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ2374",
+        "kenn": "120734521",
+        "plz": "17291",
+        "name": "Prenzlau",
+        "site_status": 1,
+        "height_above_sea": 38
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.59, 48.22]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3154",
+        "kenn": "091841352",
+        "plz": "85764",
+        "name": "Oberschleißheim OT Neuherberg",
+        "site_status": 1,
+        "height_above_sea": 494
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.6, 48.44]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3131",
+        "kenn": "091781131",
+        "plz": "85391",
+        "name": "Allershausen",
+        "site_status": 1,
+        "height_above_sea": 440
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.84, 48.3]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ1399",
+        "kenn": "091771331",
+        "plz": "85445",
+        "name": "Oberding OT Notzing",
+        "site_status": 1,
+        "height_above_sea": 463
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.91, 47.91]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ1213",
+        "kenn": "083110001",
+        "plz": "79100",
+        "name": "Schauinsland Freiburg",
+        "site_status": 1,
+        "height_above_sea": 1195
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.59, 48.83]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3473",
+        "kenn": "091762502",
+        "plz": "85129",
+        "name": "Oberdolling",
+        "site_status": 1,
+        "height_above_sea": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.54, 48.7]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ2830",
+        "kenn": "091861371",
+        "plz": "85077",
+        "name": "Manching OT Forstwiesen",
+        "site_status": 1,
+        "height_above_sea": 365
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.66, 48.26]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3408",
+        "kenn": "091841192",
+        "plz": "85748",
+        "name": "Garching b. München",
+        "site_status": 1,
+        "height_above_sea": 478
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [8, 47.87]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3359",
+        "kenn": "083150371",
+        "plz": "79868",
+        "name": "Feldberg",
+        "site_status": 1,
+        "height_above_sea": 1490
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [10.98, 47.42]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ2978",
+        "kenn": "091801172",
+        "plz": "82467",
+        "name": "Garmisch-P. OT Zugspitze",
+        "site_status": 1,
+        "height_above_sea": 2656
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.54, 48.16]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3476",
+        "kenn": "091620001",
+        "plz": "80637",
+        "name": "München-Neuhausen",
+        "site_status": 1,
+        "height_above_sea": 515
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.25, 48.88]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ2826",
+        "kenn": "091761651",
+        "plz": "85137",
+        "name": "Walting OT Pfünz",
+        "site_status": 1,
+        "height_above_sea": 385
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.66, 48.3]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ1405",
+        "kenn": "091781451",
+        "plz": "85375",
+        "name": "Neufahrn bei Freising",
+        "site_status": 1,
+        "height_above_sea": 468
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.45, 48.15]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ1360",
+        "kenn": "091620002",
+        "plz": "81241",
+        "name": "München-Pasing",
+        "site_status": 1,
+        "height_above_sea": 526
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.36, 48.5]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ1438",
+        "kenn": "091861251",
+        "plz": "85302",
+        "name": "Gerolsbach",
+        "site_status": 2,
+        "height_above_sea": 468
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.99, 48.22]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3132",
+        "kenn": "091771141",
+        "plz": "85656",
+        "name": "Buch am Buchrain",
+        "site_status": 1,
+        "height_above_sea": 527
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.98, 53.24]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ2428",
+        "kenn": "120733001",
+        "plz": "17291",
+        "name": "Hohengüstow",
+        "site_status": 1,
+        "height_above_sea": 77
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.7, 53.37]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ2645",
+        "kenn": "120734841",
+        "plz": "17291",
+        "name": "Wittstock",
+        "site_status": 1,
+        "height_above_sea": 72
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.52, 48.1]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ1984",
+        "kenn": "091620004",
+        "plz": "81479",
+        "name": "München-Obersendling",
+        "site_status": 1,
+        "height_above_sea": 547
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "odlinfo_odl_1h_latest.fid-0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.81, 48.35]
+      },
+      "geometry_name": "geom",
+      "properties": {
+        "id": "DEZ3393",
+        "kenn": "091771334",
+        "plz": "85445",
+        "name": "Oberding",
+        "site_status": 1,
+        "height_above_sea": 445
+      }
+    }
+  ],
+  "totalFeatures": 30,
+  "numberMatched": 30,
+  "numberReturned": 30,
+  "timeStamp": "2026-11-15T11:26:16.974Z",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:EPSG::4326"
+    }
+  }
+}
